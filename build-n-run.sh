@@ -3,10 +3,10 @@ repo="flappybirdo"
 echo "Versión? Ej: v1, v2... vN"
 read ver
 cd /docker
-#Pull del código de github
+#Pull del código de github, SI EXISTE ELIMINA LA CARPETA ANTERIOR
 git clone https://github.com/DonMooar/$repo.git
 cd $repo
-#copio codigo app
+#RUTA CÓDIGO DE LA APP
 cp -a /home/javirr/games/$repo .
 #Construyo la imagen para el contenedor con DOCKERFILE
 docker build --tag img-$repo-$ver . 2>./log-img-$repo-$ver
