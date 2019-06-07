@@ -12,7 +12,7 @@ cp -a /home/javirr/games/$repo .
 docker build --tag img-$repo-$ver . 2>./log-img-$repo-$ver
 sleep 1
 #Hago el contenedor con la img creada anteriormente
-docker run -d --name $repo$ver -p80:80 img-$repo-$ver &>./log-$repo$ver-cont
+docker run -d --name $repo$ver -p 80:80 img-$repo-$ver &>./log-$repo$ver-cont
 if [[ $? = 0 ]]; then
 echo "Contenedor creado."
 echo "Podrás acceder a él mediante esta URL: http://localhost:80"
